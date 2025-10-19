@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرحباً بك في المكتبة</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+    :root {
+      --main-text: #e5ff00;
+      --secondary-text: #475569;
+      --highlight: #d97706;
+      --bg-light: #fff7ed;
+      --bg-dark: #0f172a;
+      --text-dark: #f1f5f9;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--main-text);
+      transition: background-color 0.4s, color 0.4s;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    h1 {
+      color: var(--highlight);
+    }
+
+    p {
+      color: var(--secondary-text);
+    }
+
+    .btn {
+      background-color: var(--highlight);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    /* 🖼️ تنسيق اللوقو */
+    .main-logo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 🖼️ اللوقو في منتصف الشاشة -->
+    <img src="logo.jpg" alt="شعار ArchiVerse" class="main-logo">
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+      مرحباً بك في <span style="color: #00a6ff;">المكتبة</span>
+    </h1>
+
+    <p class="text-lg md:text-xl mb-8">
+      مكتبة معمارية إلكترونية لطلاب كلية العمارة - جامعة الخرطوم
+    </p>
+
+    <p class="text-md md:text-lg mb-10">
+      ابدأ رحلتك المعمارية، واستكشف المعرفة، وشارك ملفاتك لتفيد غيرك 🌿
+    </p>
+
+    <a href="library.html" class="btn">ادخل إلى المكتبة</a>
+
+    <div class="mt-10">
+      <button id="toggleDarkMode" class="btn bg-gray-800 text-white hover:bg-gray-700">تبديل الوضع الليلي</button>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggleDarkMode');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
